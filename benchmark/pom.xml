@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Load test of the running service, kept apart from the application build: Gatling and Quarkus manage different
+  versions of the same libraries (Netty…).
+    podman compose -f compose.yaml -f benchmark/compose.yaml up -d
+    mvn -f benchmark/pom.xml gatling:test
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>audio-demo-benchmark</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>audio-demo benchmark</name>
+
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>https://opensource.org/license/mit</url>
+        </license>
+    </licenses>
+
+    <properties>
+        <maven.compiler.release>21</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <gatling.version>3.16.0</gatling.version>
+        <gatling-maven-plugin.version>4.21.12</gatling-maven-plugin.version>
+        <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
+
+        <!-- load profile, overridable with -D -->
+        <baseUrl>http://localhost:8080</baseUrl>
+        <requestsPerMinute>20000</requestsPerMinute>
+        <rampUpSeconds>30</rampUpSeconds>
+        <durationSeconds>180</durationSeconds>
+        <p99Millis>2000</p99Millis>
+        <samples>${project.basedir}/../src/test/resources/wiremock/__files/samples</samples>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.gatling.highcharts</groupId>
+            <artifactId>gatling-charts-highcharts</artifactId>
+            <version>${gatling.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>io.gatling</groupId>
+                <artifactId>gatling-maven-plugin</artifactId>
+                <version>${gatling-maven-plugin.version}</version>
+                <configuration>
+                    <simulationClass>com.example.audio.benchmark.AudioDemoSimulation</simulationClass>
+                    <jvmArgs>
+                        <jvmArg>-DbaseUrl=${baseUrl}</jvmArg>
+                        <jvmArg>-DrequestsPerMinute=${requestsPerMinute}</jvmArg>
+                        <jvmArg>-DrampUpSeconds=${rampUpSeconds}</jvmArg>
+                        <jvmArg>-DdurationSeconds=${durationSeconds}</jvmArg>
+                        <jvmArg>-Dp99Millis=${p99Millis}</jvmArg>
+                        <jvmArg>-Dsamples=${samples}</jvmArg>
+                    </jvmArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

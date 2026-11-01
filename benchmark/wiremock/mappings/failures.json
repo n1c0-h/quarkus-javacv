@@ -1,0 +1,69 @@
+{
+  "mappings": [
+    {
+      "priority": 1,
+      "request": { "method": "GET", "urlPathPattern": "/audios/[0-9a-f-]{24}bee0ffff0001" },
+      "response": { "status": 404 }
+    },
+    {
+      "priority": 1,
+      "request": { "method": "GET", "urlPathPattern": "/audios/[0-9a-f-]{24}bee0ffff0002" },
+      "response": { "status": 500, "body": "internal stack trace: secret" }
+    },
+    {
+      "priority": 1,
+      "request": { "method": "GET", "urlPathPattern": "/audios/[0-9a-f-]{24}bee0ffff0003" },
+      "response": {
+        "status": 200,
+        "headers": { "Content-Type": "application/json" },
+        "transformers": ["response-template"],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Too slow\",\"formats\":[]}",
+        "fixedDelayMilliseconds": 16000
+      }
+    },
+    {
+      "priority": 1,
+      "request": { "method": "GET", "urlPathPattern": "/audios/[0-9a-f-]{24}bee0ffff0004" },
+      "response": { "fault": "CONNECTION_RESET_BY_PEER" }
+    },
+    {
+      "priority": 1,
+      "request": { "method": "GET", "urlPathPattern": "/audios/[0-9a-f-]{24}bee0ffff0005" },
+      "response": { "status": 200, "headers": { "Content-Type": "application/json" }, "body": "{\"id\":" }
+    },
+    {
+      "priority": 1,
+      "request": { "method": "GET", "urlPathPattern": "/audios/[0-9a-f-]{24}bee0ffff0006" },
+      "response": {
+        "status": 200,
+        "headers": { "Content-Type": "application/json" },
+        "body": "{\"id\":\"c58380ad-1b90-5186-91be-2bae6e75e7f8\",\"name\":\"Another audio\",\"formats\":[]}"
+      }
+    },
+    {
+      "priority": 1,
+      "request": { "method": "GET", "urlPathPattern": "/audios/[0-9a-f-]{24}bee0ffff000[789]" },
+      "response": {
+        "status": 200,
+        "headers": { "Content-Type": "application/json" },
+        "transformers": ["response-template"],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Broken content\",\"formats\":[{\"format\":\"mp3\",\"size\":266696,\"contentType\":\"audio/mpeg\"}]}"
+      }
+    },
+    {
+      "priority": 1,
+      "request": { "method": "GET", "urlPathPattern": "/audios/[0-9a-f-]{24}bee0ffff0007/content" },
+      "response": { "status": 503, "body": "upstream storage down" }
+    },
+    {
+      "priority": 1,
+      "request": { "method": "GET", "urlPathPattern": "/audios/[0-9a-f-]{24}bee0ffff0008/content" },
+      "response": { "fault": "RANDOM_DATA_THEN_CLOSE" }
+    },
+    {
+      "priority": 1,
+      "request": { "method": "GET", "urlPathPattern": "/audios/[0-9a-f-]{24}bee0ffff0009/content" },
+      "response": { "status": 200, "headers": { "Content-Type": "audio/mpeg" }, "bodyFileName": "samples/wav/stars_jg.wav" }
+    }
+  ]
+}

@@ -1,0 +1,940 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee000001000"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark stars_jg\",\"formats\":[{\"format\":\"wav\",\"size\":1057968,\"contentType\":\"audio/wav\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee000000100"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark stars_jg\",\"formats\":[{\"format\":\"mp3\",\"size\":266696,\"contentType\":\"audio/mpeg\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee000001100"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark stars_jg\",\"formats\":[{\"format\":\"wav\",\"size\":1057968,\"contentType\":\"audio/wav\"},{\"format\":\"mp3\",\"size\":266696,\"contentType\":\"audio/mpeg\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee000000010"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark stars_jg\",\"formats\":[{\"format\":\"amr-nb\",\"size\":52934,\"contentType\":\"audio/amr\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee000001010"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark stars_jg\",\"formats\":[{\"format\":\"wav\",\"size\":1057968,\"contentType\":\"audio/wav\"},{\"format\":\"amr-nb\",\"size\":52934,\"contentType\":\"audio/amr\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee000000110"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark stars_jg\",\"formats\":[{\"format\":\"mp3\",\"size\":266696,\"contentType\":\"audio/mpeg\"},{\"format\":\"amr-nb\",\"size\":52934,\"contentType\":\"audio/amr\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee000001110"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark stars_jg\",\"formats\":[{\"format\":\"wav\",\"size\":1057968,\"contentType\":\"audio/wav\"},{\"format\":\"mp3\",\"size\":266696,\"contentType\":\"audio/mpeg\"},{\"format\":\"amr-nb\",\"size\":52934,\"contentType\":\"audio/amr\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee000000001"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark stars_jg\",\"formats\":[{\"format\":\"amr-wb\",\"size\":100842,\"contentType\":\"audio/amr-wb\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee000001001"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark stars_jg\",\"formats\":[{\"format\":\"wav\",\"size\":1057968,\"contentType\":\"audio/wav\"},{\"format\":\"amr-wb\",\"size\":100842,\"contentType\":\"audio/amr-wb\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee000000101"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark stars_jg\",\"formats\":[{\"format\":\"mp3\",\"size\":266696,\"contentType\":\"audio/mpeg\"},{\"format\":\"amr-wb\",\"size\":100842,\"contentType\":\"audio/amr-wb\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee000001101"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark stars_jg\",\"formats\":[{\"format\":\"wav\",\"size\":1057968,\"contentType\":\"audio/wav\"},{\"format\":\"mp3\",\"size\":266696,\"contentType\":\"audio/mpeg\"},{\"format\":\"amr-wb\",\"size\":100842,\"contentType\":\"audio/amr-wb\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee000000011"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark stars_jg\",\"formats\":[{\"format\":\"amr-nb\",\"size\":52934,\"contentType\":\"audio/amr\"},{\"format\":\"amr-wb\",\"size\":100842,\"contentType\":\"audio/amr-wb\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee000001011"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark stars_jg\",\"formats\":[{\"format\":\"wav\",\"size\":1057968,\"contentType\":\"audio/wav\"},{\"format\":\"amr-nb\",\"size\":52934,\"contentType\":\"audio/amr\"},{\"format\":\"amr-wb\",\"size\":100842,\"contentType\":\"audio/amr-wb\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee000000111"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark stars_jg\",\"formats\":[{\"format\":\"mp3\",\"size\":266696,\"contentType\":\"audio/mpeg\"},{\"format\":\"amr-nb\",\"size\":52934,\"contentType\":\"audio/amr\"},{\"format\":\"amr-wb\",\"size\":100842,\"contentType\":\"audio/amr-wb\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee000001111"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark stars_jg\",\"formats\":[{\"format\":\"wav\",\"size\":1057968,\"contentType\":\"audio/wav\"},{\"format\":\"mp3\",\"size\":266696,\"contentType\":\"audio/mpeg\"},{\"format\":\"amr-nb\",\"size\":52934,\"contentType\":\"audio/amr\"},{\"format\":\"amr-wb\",\"size\":100842,\"contentType\":\"audio/amr-wb\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee0[0-9a-f]{8}/content",
+        "queryParameters": {
+          "format": {
+            "equalTo": "wav"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "audio/wav"
+        },
+        "bodyFileName": "samples/wav/stars_jg.wav"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee0[0-9a-f]{8}/content",
+        "queryParameters": {
+          "format": {
+            "equalTo": "mp3"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "audio/mpeg"
+        },
+        "bodyFileName": "samples/mp3/stars_jg.mp3"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee0[0-9a-f]{8}/content",
+        "queryParameters": {
+          "format": {
+            "equalTo": "amr-nb"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "audio/amr"
+        },
+        "bodyFileName": "samples/amr-nb/stars_jg.amr"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee0[0-9a-f]{8}/content",
+        "queryParameters": {
+          "format": {
+            "equalTo": "amr-wb"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "audio/amr-wb"
+        },
+        "bodyFileName": "samples/amr-wb/stars_jg.amr"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee100001000"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark dustofsnow_wt\",\"formats\":[{\"format\":\"wav\",\"size\":1135406,\"contentType\":\"audio/wav\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee100000100"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark dustofsnow_wt\",\"formats\":[{\"format\":\"mp3\",\"size\":286152,\"contentType\":\"audio/mpeg\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee100001100"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark dustofsnow_wt\",\"formats\":[{\"format\":\"wav\",\"size\":1135406,\"contentType\":\"audio/wav\"},{\"format\":\"mp3\",\"size\":286152,\"contentType\":\"audio/mpeg\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee100000010"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark dustofsnow_wt\",\"formats\":[{\"format\":\"amr-nb\",\"size\":56806,\"contentType\":\"audio/amr\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee100001010"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark dustofsnow_wt\",\"formats\":[{\"format\":\"wav\",\"size\":1135406,\"contentType\":\"audio/wav\"},{\"format\":\"amr-nb\",\"size\":56806,\"contentType\":\"audio/amr\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee100000110"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark dustofsnow_wt\",\"formats\":[{\"format\":\"mp3\",\"size\":286152,\"contentType\":\"audio/mpeg\"},{\"format\":\"amr-nb\",\"size\":56806,\"contentType\":\"audio/amr\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee100001110"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark dustofsnow_wt\",\"formats\":[{\"format\":\"wav\",\"size\":1135406,\"contentType\":\"audio/wav\"},{\"format\":\"mp3\",\"size\":286152,\"contentType\":\"audio/mpeg\"},{\"format\":\"amr-nb\",\"size\":56806,\"contentType\":\"audio/amr\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee100000001"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark dustofsnow_wt\",\"formats\":[{\"format\":\"amr-wb\",\"size\":108223,\"contentType\":\"audio/amr-wb\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee100001001"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark dustofsnow_wt\",\"formats\":[{\"format\":\"wav\",\"size\":1135406,\"contentType\":\"audio/wav\"},{\"format\":\"amr-wb\",\"size\":108223,\"contentType\":\"audio/amr-wb\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee100000101"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark dustofsnow_wt\",\"formats\":[{\"format\":\"mp3\",\"size\":286152,\"contentType\":\"audio/mpeg\"},{\"format\":\"amr-wb\",\"size\":108223,\"contentType\":\"audio/amr-wb\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee100001101"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark dustofsnow_wt\",\"formats\":[{\"format\":\"wav\",\"size\":1135406,\"contentType\":\"audio/wav\"},{\"format\":\"mp3\",\"size\":286152,\"contentType\":\"audio/mpeg\"},{\"format\":\"amr-wb\",\"size\":108223,\"contentType\":\"audio/amr-wb\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee100000011"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark dustofsnow_wt\",\"formats\":[{\"format\":\"amr-nb\",\"size\":56806,\"contentType\":\"audio/amr\"},{\"format\":\"amr-wb\",\"size\":108223,\"contentType\":\"audio/amr-wb\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee100001011"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark dustofsnow_wt\",\"formats\":[{\"format\":\"wav\",\"size\":1135406,\"contentType\":\"audio/wav\"},{\"format\":\"amr-nb\",\"size\":56806,\"contentType\":\"audio/amr\"},{\"format\":\"amr-wb\",\"size\":108223,\"contentType\":\"audio/amr-wb\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee100000111"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark dustofsnow_wt\",\"formats\":[{\"format\":\"mp3\",\"size\":286152,\"contentType\":\"audio/mpeg\"},{\"format\":\"amr-nb\",\"size\":56806,\"contentType\":\"audio/amr\"},{\"format\":\"amr-wb\",\"size\":108223,\"contentType\":\"audio/amr-wb\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee100001111"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark dustofsnow_wt\",\"formats\":[{\"format\":\"wav\",\"size\":1135406,\"contentType\":\"audio/wav\"},{\"format\":\"mp3\",\"size\":286152,\"contentType\":\"audio/mpeg\"},{\"format\":\"amr-nb\",\"size\":56806,\"contentType\":\"audio/amr\"},{\"format\":\"amr-wb\",\"size\":108223,\"contentType\":\"audio/amr-wb\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee1[0-9a-f]{8}/content",
+        "queryParameters": {
+          "format": {
+            "equalTo": "wav"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "audio/wav"
+        },
+        "bodyFileName": "samples/wav/dustofsnow_wt.wav"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee1[0-9a-f]{8}/content",
+        "queryParameters": {
+          "format": {
+            "equalTo": "mp3"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "audio/mpeg"
+        },
+        "bodyFileName": "samples/mp3/dustofsnow_wt.mp3"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee1[0-9a-f]{8}/content",
+        "queryParameters": {
+          "format": {
+            "equalTo": "amr-nb"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "audio/amr"
+        },
+        "bodyFileName": "samples/amr-nb/dustofsnow_wt.amr"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee1[0-9a-f]{8}/content",
+        "queryParameters": {
+          "format": {
+            "equalTo": "amr-wb"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "audio/amr-wb"
+        },
+        "bodyFileName": "samples/amr-wb/dustofsnow_wt.amr"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee200001000"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark aplusbsquared_mlo\",\"formats\":[{\"format\":\"wav\",\"size\":1154232,\"contentType\":\"audio/wav\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee200000100"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark aplusbsquared_mlo\",\"formats\":[{\"format\":\"mp3\",\"size\":290770,\"contentType\":\"audio/mpeg\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee200001100"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark aplusbsquared_mlo\",\"formats\":[{\"format\":\"wav\",\"size\":1154232,\"contentType\":\"audio/wav\"},{\"format\":\"mp3\",\"size\":290770,\"contentType\":\"audio/mpeg\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee200000010"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark aplusbsquared_mlo\",\"formats\":[{\"format\":\"amr-nb\",\"size\":57734,\"contentType\":\"audio/amr\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee200001010"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark aplusbsquared_mlo\",\"formats\":[{\"format\":\"wav\",\"size\":1154232,\"contentType\":\"audio/wav\"},{\"format\":\"amr-nb\",\"size\":57734,\"contentType\":\"audio/amr\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee200000110"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark aplusbsquared_mlo\",\"formats\":[{\"format\":\"mp3\",\"size\":290770,\"contentType\":\"audio/mpeg\"},{\"format\":\"amr-nb\",\"size\":57734,\"contentType\":\"audio/amr\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee200001110"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark aplusbsquared_mlo\",\"formats\":[{\"format\":\"wav\",\"size\":1154232,\"contentType\":\"audio/wav\"},{\"format\":\"mp3\",\"size\":290770,\"contentType\":\"audio/mpeg\"},{\"format\":\"amr-nb\",\"size\":57734,\"contentType\":\"audio/amr\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee200000001"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark aplusbsquared_mlo\",\"formats\":[{\"format\":\"amr-wb\",\"size\":110053,\"contentType\":\"audio/amr-wb\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee200001001"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark aplusbsquared_mlo\",\"formats\":[{\"format\":\"wav\",\"size\":1154232,\"contentType\":\"audio/wav\"},{\"format\":\"amr-wb\",\"size\":110053,\"contentType\":\"audio/amr-wb\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee200000101"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark aplusbsquared_mlo\",\"formats\":[{\"format\":\"mp3\",\"size\":290770,\"contentType\":\"audio/mpeg\"},{\"format\":\"amr-wb\",\"size\":110053,\"contentType\":\"audio/amr-wb\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee200001101"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark aplusbsquared_mlo\",\"formats\":[{\"format\":\"wav\",\"size\":1154232,\"contentType\":\"audio/wav\"},{\"format\":\"mp3\",\"size\":290770,\"contentType\":\"audio/mpeg\"},{\"format\":\"amr-wb\",\"size\":110053,\"contentType\":\"audio/amr-wb\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee200000011"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark aplusbsquared_mlo\",\"formats\":[{\"format\":\"amr-nb\",\"size\":57734,\"contentType\":\"audio/amr\"},{\"format\":\"amr-wb\",\"size\":110053,\"contentType\":\"audio/amr-wb\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee200001011"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark aplusbsquared_mlo\",\"formats\":[{\"format\":\"wav\",\"size\":1154232,\"contentType\":\"audio/wav\"},{\"format\":\"amr-nb\",\"size\":57734,\"contentType\":\"audio/amr\"},{\"format\":\"amr-wb\",\"size\":110053,\"contentType\":\"audio/amr-wb\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee200000111"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark aplusbsquared_mlo\",\"formats\":[{\"format\":\"mp3\",\"size\":290770,\"contentType\":\"audio/mpeg\"},{\"format\":\"amr-nb\",\"size\":57734,\"contentType\":\"audio/amr\"},{\"format\":\"amr-wb\",\"size\":110053,\"contentType\":\"audio/amr-wb\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee200001111"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformers": [
+          "response-template"
+        ],
+        "body": "{\"id\":\"{{request.pathSegments.[1]}}\",\"name\":\"Benchmark aplusbsquared_mlo\",\"formats\":[{\"format\":\"wav\",\"size\":1154232,\"contentType\":\"audio/wav\"},{\"format\":\"mp3\",\"size\":290770,\"contentType\":\"audio/mpeg\"},{\"format\":\"amr-nb\",\"size\":57734,\"contentType\":\"audio/amr\"},{\"format\":\"amr-wb\",\"size\":110053,\"contentType\":\"audio/amr-wb\"}]}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee2[0-9a-f]{8}/content",
+        "queryParameters": {
+          "format": {
+            "equalTo": "wav"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "audio/wav"
+        },
+        "bodyFileName": "samples/wav/aplusbsquared_mlo.wav"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee2[0-9a-f]{8}/content",
+        "queryParameters": {
+          "format": {
+            "equalTo": "mp3"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "audio/mpeg"
+        },
+        "bodyFileName": "samples/mp3/aplusbsquared_mlo.mp3"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee2[0-9a-f]{8}/content",
+        "queryParameters": {
+          "format": {
+            "equalTo": "amr-nb"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "audio/amr"
+        },
+        "bodyFileName": "samples/amr-nb/aplusbsquared_mlo.amr"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/audios/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-bee2[0-9a-f]{8}/content",
+        "queryParameters": {
+          "format": {
+            "equalTo": "amr-wb"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "audio/amr-wb"
+        },
+        "bodyFileName": "samples/amr-wb/aplusbsquared_mlo.amr"
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+# Benchmark overrides, on top of the root compose.yaml (run from the project root):
+#   podman compose -f compose.yaml -f benchmark/compose.yaml up -d
+services:
+  app:
+    environment:
+      # one FFmpeg job per hardware thread; above it, requests are rejected with 503
+      FFMPEG_MAX_JOBS: ${FFMPEG_MAX_JOBS:-32}
+
+  # the external service with stubs answering any generated id (benchmark/wiremock/mappings) and the same samples
+  wiremock:
+    command:
+      - --no-request-journal
+      - --container-threads=300
+      - --async-response-enabled=true
+      - --async-response-threads=50
+      - --disable-banner
+    volumes:
+      - ./benchmark/wiremock/mappings:/home/wiremock/mappings:ro,z

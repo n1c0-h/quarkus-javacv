@@ -1,0 +1,82 @@
+# Production image: AlmaLinux 9 micro + a jlink'd Java 21 runtime + EPEL FFmpeg + the Quarkus fast-jar.
+#   podman build -f src/main/docker/Containerfile -t audio-demo .
+# Base images are pinned by digest; refresh them with `skopeo inspect docker://docker.io/library/almalinux:9`
+# and `skopeo inspect docker://docker.io/almalinux/9-micro:latest`.
+
+ARG ALMALINUX_IMAGE=docker.io/library/almalinux@sha256:465a5007813f19b5ac8a88cd161f3d8dcc6b1958e0c03c31f7c9a1b079d0a7da
+ARG ALMALINUX_MICRO_IMAGE=docker.io/almalinux/9-micro@sha256:ae1fd0bbbe21c02a25c6f2db88277475e58baf9e8c6af26096b46c1c0601e699
+
+# --- 1. Build the application with the Java 21 JDK -----------------------------------------------------------
+FROM ${ALMALINUX_IMAGE} AS build
+# the 3.9 module stream: the build requires Maven 3.9; jlink needs the JDK modules and objcopy (binutils)
+RUN dnf module enable -y maven:3.9 \
+    && dnf install -y --nodocs --setopt=install_weak_deps=0 \
+         java-21-openjdk-devel java-21-openjdk-jmods maven-openjdk21 binutils \
+    && dnf clean all
+WORKDIR /build
+COPY pom.xml ./
+COPY src/main src/main
+RUN --mount=type=cache,target=/root/.m2 \
+    mvn -B -ntp package -Dmaven.test.skip=true
+
+# native libraries bundled in the jars, to check their system dependencies below
+RUN mkdir /build/natives && cd /build/natives \
+    && for jar in /build/target/quarkus-app/lib/main/*-linux-x86_64.jar; do \
+         jar xf "$jar"; done
+
+# --- 2. Minimal Java runtime ---------------------------------------------------------------------------------
+# java.desktop: JavaCV uses java.beans; the JVM runs headless
+RUN jlink --add-modules java.base,java.compiler,java.desktop,java.instrument,java.logging,java.management,java.naming,java.net.http,java.security.jgss,java.security.sasl,java.sql,java.transaction.xa,java.xml,jdk.crypto.ec,jdk.jfr,jdk.management,jdk.naming.dns,jdk.net,jdk.unsupported,jdk.zipfs \
+      --strip-debug --no-man-pages --no-header-files --compress=zip-6 --output /build/jre
+
+# --- 3. Root filesystem: the micro image plus the native libraries FFmpeg and the JVM link to ----------------
+# FFmpeg comes from EPEL (ffmpeg-free 7.1, the ABI JavaCV 1.5.11 is built for): its AMR encoders run about twice as
+# fast as the ones bundled in the JavaCV jars. Only the libraries used for audio are installed: libavfilter and
+# libavdevice would pull Mesa, LLVM, OCR… JavaCPP loads the bundled ones instead (they are not used).
+FROM ${ALMALINUX_MICRO_IMAGE} AS micro
+FROM ${ALMALINUX_IMAGE} AS rootfs
+RUN dnf install -y --nodocs epel-release dnf-plugins-core && dnf config-manager --set-enabled crb
+COPY --from=micro / /mnt/rootfs/
+# the repositories of this stage, with EPEL and CRB
+RUN dnf install -y --installroot=/mnt/rootfs --releasever=9 --setopt=reposdir=/etc/yum.repos.d \
+      --setopt=install_weak_deps=0 --nodocs \
+      libstdc++ libgcc zlib systemd-libs ca-certificates tzdata \
+      libavutil-free libswresample-free libavcodec-free libavformat-free libswscale-free \
+    && dnf clean all --installroot=/mnt/rootfs \
+    && rm -rf /mnt/rootfs/var/cache/dnf /mnt/rootfs/var/log/dnf* /mnt/rootfs/var/log/hawkey.log
+COPY --from=build /build/jre /mnt/rootfs/opt/jre
+COPY --from=build /build/natives /tmp/natives
+# fails the build when the JVM, the JavaCV bindings or FFmpeg miss a system library of the root filesystem
+RUN loader="/mnt/rootfs/lib64/ld-linux-x86-64.so.2 --library-path /mnt/rootfs/lib64:/mnt/rootfs/usr/lib64" \
+    && $loader /mnt/rootfs/opt/jre/bin/java -Xshare:off -version \
+    && for lib in $(find /tmp/natives -name '*.so*' -type f) \
+         /mnt/rootfs/usr/lib64/libav*.so.* /mnt/rootfs/usr/lib64/libsw*.so.*; do \
+         missing=$($loader --list "$lib" 2>&1 | grep 'not found' || true); \
+         if [ -n "$missing" ]; then echo "$lib: $missing"; exit 1; fi; done
+
+# --- 4. Runtime image ----------------------------------------------------------------------------------------
+FROM ${ALMALINUX_MICRO_IMAGE}
+LABEL org.opencontainers.image.title="audio-demo" \
+      org.opencontainers.image.description="Quarkus audio service: JavaCV FFmpeg transcoding and streaming" \
+      org.opencontainers.image.licenses="MIT"
+COPY --from=rootfs /mnt/rootfs/ /
+# application files belong to root and are read-only for the runtime user
+COPY --from=build /build/target/quarkus-app/lib/ /deployments/lib/
+COPY --from=build /build/target/quarkus-app/*.jar /deployments/
+COPY --from=build /build/target/quarkus-app/app/ /deployments/app/
+COPY --from=build /build/target/quarkus-app/quarkus/ /deployments/quarkus/
+
+ENV JAVA_HOME=/opt/jre \
+    TZ=UTC \
+    LANG=C.UTF-8
+USER 1001
+EXPOSE 8080 9000
+# /tmp is the only writable path: JavaCPP and the AWS CRT extract their native libraries there
+VOLUME ["/tmp"]
+ENTRYPOINT ["/opt/jre/bin/java", \
+  "-XX:MaxRAMPercentage=70", "-XX:MaxDirectMemorySize=256m", "-XX:+ExitOnOutOfMemoryError", \
+  "-Djava.awt.headless=true", "-Djava.io.tmpdir=/tmp", \
+  "-Dorg.bytedeco.javacpp.cachedir=/tmp/javacpp", "-Dorg.bytedeco.javacpp.maxBytes=512m", \
+  "-Dorg.bytedeco.javacpp.pathsFirst=true", \
+  "-Djava.util.logging.manager=org.jboss.logmanager.LogManager", \
+  "-jar", "/deployments/quarkus-run.jar"]

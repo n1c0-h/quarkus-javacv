@@ -1,0 +1,33 @@
+# Tests: the Dev Services of application-dev.yml (build-time settings are not inherited between profiles), with
+# shorter limits to exercise the error paths quickly.
+quarkus:
+  log:
+    console:
+      json:
+        enabled: false
+  datasource:
+    devservices:
+      image-name: docker.io/library/postgres:17-alpine
+      init-script-path: db/schema.sql
+  wiremock:
+    devservices:
+      files-mapping: src/test/resources/wiremock
+  rest-client:
+    external-audio:
+      url: http://localhost:${quarkus.wiremock.devservices.port}
+      read-timeout: 1000
+  aws:
+    devservices:
+      localstack:
+        init-scripts-folder: src/test/resources/localstack
+        init-completion-msg: Fixed sounds seeded
+  s3:
+    path-style-access: true
+  http:
+    limits:
+      max-body-size: 5M
+audio:
+  concatenation:
+    templates:
+      # its fixed sound does not exist
+      unknown-sound: [unknown, INPUT]

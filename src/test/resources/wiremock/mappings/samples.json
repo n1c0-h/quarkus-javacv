@@ -1,0 +1,496 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "/audios/e286f5a2-e306-5ed3-a702-6157fbd56929"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "jsonBody": {
+          "id": "e286f5a2-e306-5ed3-a702-6157fbd56929",
+          "name": "The Stars",
+          "formats": [
+            {
+              "format": "mp3",
+              "size": 266696,
+              "contentType": "audio/mpeg"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/audios/e286f5a2-e306-5ed3-a702-6157fbd56929/content",
+        "queryParameters": {
+          "format": {
+            "equalTo": "mp3"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "audio/mpeg"
+        },
+        "bodyFileName": "samples/mp3/stars_jg.mp3"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/audios/c58380ad-1b90-5186-91be-2bae6e75e7f8"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "jsonBody": {
+          "id": "c58380ad-1b90-5186-91be-2bae6e75e7f8",
+          "name": "Dust of Snow",
+          "formats": [
+            {
+              "format": "mp3",
+              "size": 286152,
+              "contentType": "audio/mpeg"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/audios/c58380ad-1b90-5186-91be-2bae6e75e7f8/content",
+        "queryParameters": {
+          "format": {
+            "equalTo": "mp3"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "audio/mpeg"
+        },
+        "bodyFileName": "samples/mp3/dustofsnow_wt.mp3"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/audios/961f0f73-2951-5553-a749-964cd448de08"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "jsonBody": {
+          "id": "961f0f73-2951-5553-a749-964cd448de08",
+          "name": "a plus b squared",
+          "formats": [
+            {
+              "format": "mp3",
+              "size": 290770,
+              "contentType": "audio/mpeg"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/audios/961f0f73-2951-5553-a749-964cd448de08/content",
+        "queryParameters": {
+          "format": {
+            "equalTo": "mp3"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "audio/mpeg"
+        },
+        "bodyFileName": "samples/mp3/aplusbsquared_mlo.mp3"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/audios/c343bd6a-00be-5f12-9f17-12941ea27b71"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "jsonBody": {
+          "id": "c343bd6a-00be-5f12-9f17-12941ea27b71",
+          "name": "Her Lips Are Copper Wire",
+          "formats": [
+            {
+              "format": "mp3",
+              "size": 441590,
+              "contentType": "audio/mpeg"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/audios/c343bd6a-00be-5f12-9f17-12941ea27b71/content",
+        "queryParameters": {
+          "format": {
+            "equalTo": "mp3"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "audio/mpeg"
+        },
+        "bodyFileName": "samples/mp3/herlips_tp.mp3"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/audios/285e7993-8df9-5aba-ab07-b71f06d18865"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "jsonBody": {
+          "id": "285e7993-8df9-5aba-ab07-b71f06d18865",
+          "name": "For me no roseate garlands twine",
+          "formats": [
+            {
+              "format": "mp3",
+              "size": 451431,
+              "contentType": "audio/mpeg"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/audios/285e7993-8df9-5aba-ab07-b71f06d18865/content",
+        "queryParameters": {
+          "format": {
+            "equalTo": "mp3"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "audio/mpeg"
+        },
+        "bodyFileName": "samples/mp3/forme_el.mp3"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/audios/8bcd467b-6f78-5d5a-9e01-749d575ec46e"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "jsonBody": {
+          "id": "8bcd467b-6f78-5d5a-9e01-749d575ec46e",
+          "name": "Sonnet 20",
+          "formats": [
+            {
+              "format": "mp3",
+              "size": 463338,
+              "contentType": "audio/mpeg"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/audios/8bcd467b-6f78-5d5a-9e01-749d575ec46e/content",
+        "queryParameters": {
+          "format": {
+            "equalTo": "mp3"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "audio/mpeg"
+        },
+        "bodyFileName": "samples/mp3/sonnet20_cjph.mp3"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/audios/86ec364a-2cf0-5452-a3b3-1becd2ab741a"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "jsonBody": {
+          "id": "86ec364a-2cf0-5452-a3b3-1becd2ab741a",
+          "name": "Sonnet VIII",
+          "formats": [
+            {
+              "format": "mp3",
+              "size": 459574,
+              "contentType": "audio/mpeg"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/audios/86ec364a-2cf0-5452-a3b3-1becd2ab741a/content",
+        "queryParameters": {
+          "format": {
+            "equalTo": "mp3"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "audio/mpeg"
+        },
+        "bodyFileName": "samples/mp3/sonnetviii_ss.mp3"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/audios/fec146e8-5722-534f-8ee4-7418dfac15b5"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "jsonBody": {
+          "id": "fec146e8-5722-534f-8ee4-7418dfac15b5",
+          "name": "Darkness",
+          "formats": [
+            {
+              "format": "mp3",
+              "size": 495964,
+              "contentType": "audio/mpeg"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/audios/fec146e8-5722-534f-8ee4-7418dfac15b5/content",
+        "queryParameters": {
+          "format": {
+            "equalTo": "mp3"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "audio/mpeg"
+        },
+        "bodyFileName": "samples/mp3/darkness_dg.mp3"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/audios/988fdf0a-1ca2-59b3-940c-dd0f0b9e3d3d"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "jsonBody": {
+          "id": "988fdf0a-1ca2-59b3-940c-dd0f0b9e3d3d",
+          "name": "Autumn Twilight: Grey and Gold",
+          "formats": [
+            {
+              "format": "mp3",
+              "size": 503935,
+              "contentType": "audio/mpeg"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/audios/988fdf0a-1ca2-59b3-940c-dd0f0b9e3d3d/content",
+        "queryParameters": {
+          "format": {
+            "equalTo": "mp3"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "audio/mpeg"
+        },
+        "bodyFileName": "samples/mp3/autumntwilight_ik.mp3"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/audios/3f12075c-6e28-5fd4-b18e-8fcf44b57b83"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "jsonBody": {
+          "id": "3f12075c-6e28-5fd4-b18e-8fcf44b57b83",
+          "name": "Song of Myself, Section 1",
+          "formats": [
+            {
+              "format": "mp3",
+              "size": 498282,
+              "contentType": "audio/mpeg"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/audios/3f12075c-6e28-5fd4-b18e-8fcf44b57b83/content",
+        "queryParameters": {
+          "format": {
+            "equalTo": "mp3"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "audio/mpeg"
+        },
+        "bodyFileName": "samples/mp3/songofmyselfone_clp.mp3"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/audios/d860230a-0998-58dd-bb9d-0c17b36cd7ef"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "jsonBody": {
+          "id": "d860230a-0998-58dd-bb9d-0c17b36cd7ef",
+          "name": "The Nymph's Reply to the Shepherd",
+          "formats": [
+            {
+              "format": "mp3",
+              "size": 678407,
+              "contentType": "audio/mpeg"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/audios/d860230a-0998-58dd-bb9d-0c17b36cd7ef/content",
+        "queryParameters": {
+          "format": {
+            "equalTo": "mp3"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "audio/mpeg"
+        },
+        "bodyFileName": "samples/mp3/nymphsreply_cm.mp3"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/audios/f23743d2-c68a-5b58-b45a-c9bce9971410"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "jsonBody": {
+          "id": "f23743d2-c68a-5b58-b45a-c9bce9971410",
+          "name": "Great Things",
+          "formats": [
+            {
+              "format": "mp3",
+              "size": 773561,
+              "contentType": "audio/mpeg"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/audios/f23743d2-c68a-5b58-b45a-c9bce9971410/content",
+        "queryParameters": {
+          "format": {
+            "equalTo": "mp3"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "audio/mpeg"
+        },
+        "bodyFileName": "samples/mp3/greatthings_asm.mp3"
+      }
+    }
+  ]
+}

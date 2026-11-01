@@ -1,0 +1,25 @@
+# Local development: every dependency is a Dev Service.
+quarkus:
+  log:
+    console:
+      json:
+        enabled: false
+  datasource:
+    devservices:
+      image-name: docker.io/library/postgres:17-alpine
+      init-script-path: db/schema.sql
+  # the external audio service, mocked with the stubs and samples of src/test/resources/wiremock
+  wiremock:
+    devservices:
+      files-mapping: src/test/resources/wiremock
+  rest-client:
+    external-audio:
+      url: http://localhost:${quarkus.wiremock.devservices.port}
+  # LocalStack Dev Service; its ready hook creates the bucket and uploads the fixed sounds
+  aws:
+    devservices:
+      localstack:
+        init-scripts-folder: src/test/resources/localstack
+        init-completion-msg: Fixed sounds seeded
+  s3:
+    path-style-access: true

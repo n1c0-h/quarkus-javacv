@@ -1,0 +1,87 @@
+quarkus:
+  application:
+    name: audio-demo
+
+  http:
+    # covers the streamed /transcodings uploads
+    limits:
+      max-body-size: 50M
+    idle-timeout: 60s
+    cors:
+      enabled: false
+    header:
+      X-Content-Type-Options:
+        value: nosniff
+      X-Frame-Options:
+        value: DENY
+      Content-Security-Policy:
+        value: "default-src 'none'; frame-ancestors 'none'"
+      Referrer-Policy:
+        value: no-referrer
+      Cache-Control:
+        value: no-store
+      Cross-Origin-Resource-Policy:
+        value: same-origin
+
+  # health and metrics on a separate port, not exposed publicly
+  management:
+    enabled: true
+
+  smallrye-openapi:
+    info-title: Audio demo
+
+  jackson:
+    fail-on-unknown-properties: true
+    write-durations-as-timestamps: false
+
+  log:
+    console:
+      json:
+        enabled: true
+
+  rest-client:
+    external-audio:
+      url: ${EXTERNAL_AUDIO_URL}
+      connect-timeout: 2000
+      read-timeout: 15000
+      follow-redirects: false
+
+  datasource:
+    db-kind: postgresql
+    reactive:
+      max-size: 20
+
+  # concurrent FFmpeg jobs per operation, at most one per hardware thread; further ones get a 503
+  fault-tolerance:
+    "com.example.audio.adapters.output.ffmpeg.JavaCvAudioProcessor/process":
+      bulkhead:
+        value: ${FFMPEG_MAX_JOBS:8}
+    "com.example.audio.adapters.output.ffmpeg.JavaCvAudioProcessor/concatenate":
+      bulkhead:
+        value: ${FFMPEG_MAX_JOBS:8}
+
+audio:
+  storage:
+    bucket: ${AUDIO_BUCKET:audio}
+  processing:
+    max-audio-duration: PT15M
+  # fixed sound names (stored in every proposed format) around exactly one INPUT
+  concatenation:
+    templates:
+      greeting: [a, INPUT, b]
+      intro: [c, INPUT]
+      outro: [INPUT, d]
+
+"%prod":
+  quarkus:
+    http:
+      header:
+        # TLS is terminated in front of the service
+        Strict-Transport-Security:
+          value: max-age=31536000; includeSubDomains
+    # a datasource URL in every profile would disable the PostgreSQL Dev Service
+    datasource:
+      reactive:
+        url: ${DB_URL}
+      username: ${DB_USER}
+      password: ${DB_PASSWORD}

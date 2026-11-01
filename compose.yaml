@@ -1,0 +1,67 @@
+# Runs the production image with its dependencies:
+#   podman build -f src/main/docker/Containerfile -t localhost/audio-demo:1.0.0-SNAPSHOT .
+#   podman compose up
+# Bind mounts use ":z" so SELinux lets the containers read them (it relabels these files, nothing else).
+name: audio-demo
+
+services:
+  app:
+    image: localhost/audio-demo:1.0.0-SNAPSHOT
+    ports:
+      - "8080:8080"
+    environment:
+      DB_URL: postgresql://postgres:5432/audio
+      DB_USER: audio
+      DB_PASSWORD: audio
+      EXTERNAL_AUDIO_URL: http://wiremock:8080
+      QUARKUS_S3_ENDPOINT_OVERRIDE: http://localstack:4566
+      QUARKUS_S3_PATH_STYLE_ACCESS: "true"
+      QUARKUS_S3_AWS_REGION: us-east-1
+      QUARKUS_S3_AWS_CREDENTIALS_TYPE: static
+      QUARKUS_S3_AWS_CREDENTIALS_STATIC_PROVIDER_ACCESS_KEY_ID: test
+      QUARKUS_S3_AWS_CREDENTIALS_STATIC_PROVIDER_SECRET_ACCESS_KEY: test
+    read_only: true
+    tmpfs:
+      - /tmp:rw,exec,size=512m
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges]
+    depends_on:
+      postgres:
+        condition: service_healthy
+      localstack:
+        condition: service_healthy
+      wiremock:
+        condition: service_started
+
+  postgres:
+    image: docker.io/library/postgres:17-alpine
+    environment:
+      POSTGRES_DB: audio
+      POSTGRES_USER: audio
+      POSTGRES_PASSWORD: audio
+    # the image applies the schema on first start
+    volumes:
+      - ./src/main/resources/db/schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro,z
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "audio"]
+      interval: 2s
+      retries: 30
+
+  localstack:
+    image: docker.io/localstack/localstack:4.2.0
+    environment:
+      SERVICES: s3
+    volumes:
+      - ./src/test/resources/localstack:/etc/localstack/init/ready.d:ro,z
+    healthcheck:
+      test: ["CMD", "awslocal", "s3", "ls", "s3://audio/fixed-sounds/"]
+      interval: 2s
+      retries: 60
+
+  # the external audio service, mocked with the same stubs as dev mode
+  wiremock:
+    image: docker.io/wiremock/wiremock:3.13.2
+    ports:
+      - "8089:8080"
+    volumes:
+      - ./src/test/resources/wiremock:/home/wiremock:ro,z
