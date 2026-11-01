@@ -207,6 +207,9 @@ transcodings and synchronizations, which cannot be avoided.
 
 ## Robustness
 
+Full figures and analysis: [benchmark, profiling and fuzzing report](docs/benchmark-and-fuzzing-report.md).
+Lessons learned: [JavaCV FFmpeg and Quarkus streaming guide](docs/javacv-ffmpeg-and-quarkus-streaming-guide.md).
+
 - **Fuzzing**: seeded mutations of valid samples (`AudioMutator`: bit flips, boundary bytes, truncations, duplicated
   or removed chunks, garbage after a valid header, foreign headers, and WAV/MP3/AMR header fields such as rates,
   channels, sizes, frame types). `JavaCvAudioProcessorFuzzTest` runs every FFmpeg path on them (decode and encode,
